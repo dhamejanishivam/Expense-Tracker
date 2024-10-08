@@ -97,29 +97,26 @@
 
 
     <script>
+        // Fetch data.txt with a cache-busting query parameter
+        fetch('data.txt?v=' + new Date().getTime())
+            .then(response => response.text())
+            .then(data => {
+                // Inject the fetched data into the DOM
+                document.getElementById("table").innerHTML = data;
 
-    fetch('data.txt')
-        .then(response => response.text())
-        .then(data => {
-            // Inject the fetched data into the DOM
-            document.getElementById("table").innerHTML = data;
+                // Now that the data is loaded, calculate the total
+                let entries = document.querySelectorAll(".table table .price");
+                let total = 0;
+                entries.forEach(entry => {
+                    total += parseFloat(entry.innerHTML); // Parse and sum the prices
+                });
 
-            // Now that the data is loaded, calculate the total
-            let entries = document.querySelectorAll(".table table .price");
-            let total = 0;
-            entries.forEach(entry => {
-                total += parseFloat(entry.innerHTML); // Parse and sum the prices
+                // Update the total amount in the DOM
+                document.getElementById('totalamount').innerHTML = `${total}/-`;
+            })
+            .catch(error => {
+                console.error('Error fetching the TXT file:', error);
             });
-
-            // Update the total amount in the DOM
-            document.getElementById('totalamount').innerHTML = `${total}/-`;
-        })
-        .catch(error => {
-            console.error('Error fetching the TXT file:', error);
-        });
-            
-            
-
     </script>
 
 
