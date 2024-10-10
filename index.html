@@ -15,11 +15,15 @@
 
         body {
             background-color: #fefefe;
+            background-color: rgb(245, 221, 225);
+            background-color: #d9d9ff;
+            /* background: linear-gradient(36deg, rgb(129, 129, 243) 0%, rgb(247, 226, 230) 50%, rgb(129, 129, 243) 100%); */
         }
 
         .header {
             display: flex;
             background-color: #00a7a2;
+            background-color: #8787ff;
             justify-content: center;
             color: white;
             padding: 10px 0px;
@@ -36,12 +40,14 @@
 
         td,
         th {
-            border: 1px solid #dddddd;
+            border: 1px solid #c2c2ff;
             padding: 8px;
         }
 
         .table table th {
-            background-color: rgb(106, 255, 255);
+            /* background-color: rgb(106, 255, 255);
+            background-color: rgb(228, 128, 161); */
+            background-color: rgb(194, 194, 255);
             font-weight: bolder;
             font-size: 2rem;
 
@@ -51,7 +57,7 @@
             font-size: 1.5rem;
             text-align: center;
         }
-
+        
         .table table tr:nth-child(odd) {
             background-color: rgb(235, 235, 235);
         }
@@ -65,14 +71,27 @@
         .table table th:nth-last-child(1) {
             border-top-right-radius: 20px;
             border-right: none;
+            border: none;
+            /* background-color: red; */
             border-top: none;
+        }  
+
+        .table table tr:nth-child(n){
+            color: black ;
+            font-weight: 520;
         }
+        
+
+        .table table tr:first-child{
+            color: red;
+            font-weight: bolder;
+        }
+        
     </style>
 
 </head>
 
 <body>
-    <!-- Control it with mobile, site will be hosted and viewed, but to edit it ill send command from my mobile then it will reflect on the site -->
 
     <header>
 
@@ -121,11 +140,5 @@
 
 
 </body>
-
-
-
-
-
-
 
 </html>
